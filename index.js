@@ -6,14 +6,21 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
+const {
+  generateEngineerCard,
+  generateInternCard,
+  generateManagerCard,
+  baseHTML,
+} = require("./src/htmlGen");
+
 const employees = [];
 const emailValidate = require("email-validate");
 
-const Employee = {
-  Engineer: "Engineer",
-  Intern: "Intern",
-  Manager: "Manager",
-};
+// const Employee = {
+//   Engineer: "Engineer",
+//   Intern: "Intern",
+//   Manager: "Manager",
+// };
 
 function init() {
   function managerCreate() {
@@ -164,7 +171,7 @@ function init() {
       });
   }
   function generateHTML() {
-    fs.writeFile("index.html", baseHTML(employees), (err) => {
+    fs.writeFile("./dist/index.html", baseHTML(employees), (err) => {
       err ? console.log(err) : console.log("Generated HTML File");
     });
   }

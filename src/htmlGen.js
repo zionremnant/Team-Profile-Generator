@@ -70,4 +70,11 @@ ${htmlArr.join(" ")}
   </div>
   </div>
   </body>
-</html>`;
+</html>
+`;
+module.exports = {
+  generateEngineerCard,
+  generateInternCard,
+  generateManagerCard,
+  baseHTML,
+};
