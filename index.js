@@ -75,7 +75,7 @@ function init() {
           case "Intern":
             return internCreate();
           default:
-            return generateHTML;
+            return generateHTML();
         }
       });
   }
