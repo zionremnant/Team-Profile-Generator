@@ -32,3 +32,20 @@ const generateEngineerCard = (engineer) => {
   </div>
   `;
 };
+const generateInternCard = (intern) => {
+  return `
+      <div class="card">
+      <h3>${intern.getName()}</h3>
+      <p>${intern.getRole()}</p>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">ID: ${intern.getID()}</li>
+          <li class="list-group-item">
+            Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a>
+          </li>
+          <li class="list-group-item">Office: ${intern.getSchool()}</li>
+        </ul>
+      </div>
+    </div>
+    `;
+};

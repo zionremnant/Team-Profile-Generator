@@ -121,6 +121,48 @@ function init() {
         mainMenu();
       });
   }
+  function internCreate() {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "name",
+          message: "What is the intern's name?",
+          validate: (response) => {
+            return validation.required(response);
+          },
+        },
+        {
+          type: "input",
+          name: "id",
+          message: "What is the intern's employee Id?",
+          validate: (response) => {
+            return validation.required(response);
+          },
+        },
+        {
+          type: "input",
+          name: "email",
+          message: "What is the intern's email address?",
+          validate: (response) => {
+            return validation.required(response) && validation.email(response);
+          },
+        },
+        {
+          type: "input",
+          name: "username",
+          message: "What is the intern's school?",
+          validate: (response) => {
+            return validation.required(response);
+          },
+        },
+      ])
+      .then(({ name, id, email, school }) => {
+        const intern = new Intern(name, id, email, school);
+        employees.push(generateInternCard(intern));
+        mainMenu();
+      });
+  }
   managerCreate();
 }
 
