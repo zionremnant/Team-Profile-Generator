@@ -57,16 +57,17 @@ const baseHTML = (htmlArr) =>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <title>Document</title>
+    <style>body{font-size:80%}</style>
+    <title>Team Profile</title>
   </head>
   <body>
-  <header>
-  <div class="jumbotron jumbotron-fluid">
-  <h1 class="display-4 heading">Team Members</h1>
+  <div class="container p-5">
+  <div class-"row">
+  <h1 class="text-center">Team Members</h1>
   </div>
-  </header>
-  <div id="container">
-  <div class="card-deck">
+  </div>
+  <div class="container">
+  <div class="row g-5">
 ${htmlArr.join(" ")}
   </div>
   </div>
