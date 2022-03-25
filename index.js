@@ -17,44 +17,111 @@ const Employee = {
 
 function init() {
   function managerCreate() {
-    inquirer.prompt([
-      {
-        type: "input",
-        name: "managerName",
-        message: "What is the manager's name?",
-        validate: (response) => {
-          return validation.required(response);
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "name",
+          message: "What is the manager's name?",
+          validate: (response) => {
+            return validation.required(response);
+          },
         },
-      },
-      {
-        type: "input",
-        name: "managerId",
-        message: "What is the manager's employee Id?",
-        validate: (response) => {
-          return validation.required(response);
+        {
+          type: "input",
+          name: "id",
+          message: "What is the manager's employee Id?",
+          validate: (response) => {
+            return validation.required(response);
+          },
         },
-      },
-      {
-        type: "input",
-        name: "managerEmail",
-        message: "What is the manager's email address?",
-        validate: (response) => {
-          return validation.required(response) && validation.email(response);
+        {
+          type: "input",
+          name: "email",
+          message: "What is the manager's email address?",
+          validate: (response) => {
+            return validation.required(response) && validation.email(response);
+          },
         },
-      },
-      {
-        type: "input",
-        name: "managerOfficeNumber",
-        message: "What is the manager's office number?",
-        validate: (response) => {
-          return validation.required(response);
+        {
+          type: "input",
+          name: "officeNumber",
+          message: "What is the manager's office number?",
+          validate: (response) => {
+            return validation.required(response);
+          },
         },
-      },
-    ]);
-    // .then[({name, id, email, officeNumber]} => {
-    //   const manager = new Manager(name, id, email, officeNumber)
-    // })
+      ])
+      .then(({ name, id, email, officeNumber }) => {
+        const manager = new Manager(name, id, email, officeNumber);
+        employees.push(generateManagerCard(manager));
+        mainMenu();
+      });
   }
+  function mainMenu() {
+    inquirer
+      .prompt([
+        {
+          type: "list",
+          name: "addedRole",
+          message: "Would you like to add another employee??",
+          choices: ["Engineer", "Intern", "No, I'm Done"],
+        },
+      ])
+      .then((answers) => {
+        switch (answers.addedRole) {
+          case "Engineer":
+            return engineerCreate();
+          case "Intern":
+            return internCreate();
+          default:
+            return generateHTML;
+        }
+      });
+  }
+  function engineerCreate() {
+    inquirer
+      .prompt([
+        {
+          type: "input",
+          name: "name",
+          message: "What is the engineer's name?",
+          validate: (response) => {
+            return validation.required(response);
+          },
+        },
+        {
+          type: "input",
+          name: "id",
+          message: "What is the engineer's employee Id?",
+          validate: (response) => {
+            return validation.required(response);
+          },
+        },
+        {
+          type: "input",
+          name: "email",
+          message: "What is the engineer's email address?",
+          validate: (response) => {
+            return validation.required(response) && validation.email(response);
+          },
+        },
+        {
+          type: "input",
+          name: "username",
+          message: "What is the engineer's Github username?",
+          validate: (response) => {
+            return validation.required(response);
+          },
+        },
+      ])
+      .then(({ name, id, email, username }) => {
+        const engineer = new Engineer(name, id, email, username);
+        employees.push(generateEngineerCard(engineer));
+        mainMenu();
+      });
+  }
+  managerCreate();
 }
 
 init();
