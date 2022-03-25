@@ -14,7 +14,7 @@ const {
 } = require("./src/htmlGen");
 
 const employees = [];
-const emailValidate = require("email-validate");
+// const emailValidate = require("email-validate");
 
 // const Employee = {
 //   Engineer: "Engineer",
@@ -30,33 +30,33 @@ function init() {
           type: "input",
           name: "name",
           message: "What is the manager's name?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
         {
           type: "input",
           name: "id",
           message: "What is the manager's employee Id?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
         {
           type: "input",
           name: "email",
           message: "What is the manager's email address?",
-          validate: (response) => {
-            return validation.required(response) && validation.email(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response) && validation.email(response);
+          // },
         },
         {
           type: "input",
           name: "officeNumber",
           message: "What is the manager's office number?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
       ])
       .then(({ name, id, email, officeNumber }) => {
@@ -93,33 +93,33 @@ function init() {
           type: "input",
           name: "name",
           message: "What is the engineer's name?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
         {
           type: "input",
           name: "id",
           message: "What is the engineer's employee Id?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
         {
           type: "input",
           name: "email",
           message: "What is the engineer's email address?",
-          validate: (response) => {
-            return validation.required(response) && validation.email(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response) && validation.email(response);
+          // },
         },
         {
           type: "input",
           name: "username",
           message: "What is the engineer's Github username?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
       ])
       .then(({ name, id, email, username }) => {
@@ -135,33 +135,33 @@ function init() {
           type: "input",
           name: "name",
           message: "What is the intern's name?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
         {
           type: "input",
           name: "id",
           message: "What is the intern's employee Id?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
         {
           type: "input",
           name: "email",
           message: "What is the intern's email address?",
-          validate: (response) => {
-            return validation.required(response) && validation.email(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response) && validation.email(response);
+          // },
         },
         {
           type: "input",
-          name: "username",
+          name: "school",
           message: "What is the intern's school?",
-          validate: (response) => {
-            return validation.required(response);
-          },
+          // validate: (response) => {
+          //   return validation.required(response);
+          // },
         },
       ])
       .then(({ name, id, email, school }) => {
