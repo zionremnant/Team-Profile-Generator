@@ -49,7 +49,8 @@ const generateInternCard = (intern) => {
     </div>
     `;
 };
-const baseHTML = `<!DOCTYPE html>
+const baseHTML = (htmlArr) =>
+  `<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -65,6 +66,7 @@ const baseHTML = `<!DOCTYPE html>
   </header>
   <div id="container">
   <div class="card-deck">
+${htmlArr.join(" ")}
   </div>
   </div>
   </body>

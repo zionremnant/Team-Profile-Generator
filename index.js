@@ -163,6 +163,11 @@ function init() {
         mainMenu();
       });
   }
+  function generateHTML() {
+    fs.writeFile("index.html", baseHTML(employees), (err) => {
+      err ? console.log(err) : console.log("Generated HTML File");
+    });
+  }
   managerCreate();
 }
 
