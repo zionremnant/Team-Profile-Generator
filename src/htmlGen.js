@@ -1,6 +1,6 @@
 const generateManagerCard = (manager) => {
   return `
-  <div class="card">
+  <div class="card m-1 bg-primary" style="width: 18rem">
   <h3>${manager.getName()}</h3>
   <p>${manager.getRole()}</p>
   <div class="card-body">
@@ -17,7 +17,7 @@ const generateManagerCard = (manager) => {
 };
 const generateEngineerCard = (engineer) => {
   return `
-    <div class="card">
+    <div class="card m-1 bg-success" style="width: 18rem">
     <h3>${engineer.getName()}</h3>
     <p>${engineer.getRole()}</p>
     <div class="card-body">
@@ -34,7 +34,7 @@ const generateEngineerCard = (engineer) => {
 };
 const generateInternCard = (intern) => {
   return `
-      <div class="card">
+  <div class="card m-1 bg-info" style="width: 18rem">
       <h3>${intern.getName()}</h3>
       <p>${intern.getRole()}</p>
       <div class="card-body">
