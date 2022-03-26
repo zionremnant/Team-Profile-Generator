@@ -71,5 +71,8 @@ npm test
 
 ## Demo
 
+[Demo video](https://watch.screencastify.com/v/145TY13he7wNIEQXd772)
 
+## Output HTML Link
 
+[Output HTML File](https://htmlpreview.github.io/?https://github.com/zionremnant/Team-Profile-Generator/blob/main/dist/index.html)
