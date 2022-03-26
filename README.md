@@ -75,4 +75,4 @@ npm test
 
 ## Output HTML Link
 
-[Output HTML File](https://github.com/zionremnant/Team-Profile-Generator/blob/main/dist/index.html)
+[Output HTML File](https://htmlpreview.github.io/?https://github.com/zionremnant/Team-Profile-Generator/blob/main/dist/index.html)
