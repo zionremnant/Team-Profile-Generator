@@ -115,15 +115,15 @@ function init() {
         },
         {
           type: "input",
-          name: "username",
-          message: "What is the engineer's Github username?",
+          name: "github",
+          message: "What is the engineer's Github?",
           // validate: (response) => {
           //   return validation.required(response);
           // },
         },
       ])
-      .then(({ name, id, email, username }) => {
-        const engineer = new Engineer(name, id, email, username);
+      .then(({ name, id, email, github }) => {
+        const engineer = new Engineer(name, id, email, github);
         employees.push(generateEngineerCard(engineer));
         mainMenu();
       });

@@ -26,7 +26,7 @@ const generateEngineerCard = (engineer) => {
         <li class="list-group-item">
           Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a>
         </li>
-        <li class="list-group-item">Office: ${engineer.getUsername()}</li>
+        <li class="list-group-item">Office: ${engineer.getGithub()}</li>
       </ul>
     </div>
   </div>
@@ -61,15 +61,13 @@ const baseHTML = (htmlArr) =>
     <title>Team Profile</title>
   </head>
   <body>
-  <div class="container p-5">
-  <div class-"row">
-  <h1 class="text-center">Team Members</h1>
-  </div>
-  </div>
+  <div class="jumbotron jumbotron-fluid bg-warning">
   <div class="container">
-  <div class="row g-5">
-${htmlArr.join(" ")}
+    <h1 class="display-4 text-center">Team Members</h1>
   </div>
+  </div>
+  <div class="d-flex flex-row flex-wrap justify-content-center">
+${htmlArr.join(" ")}
   </div>
   </body>
 </html>
